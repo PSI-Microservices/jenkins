@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: psimicroservicesjenkins 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: psimicroservicesjenkins
+  template:
+    metadata:
+      labels:
+        app: psimicroservicesjenkins 
+    spec:
+      containers:
+        - name: psimicroservicesjenkins 
+          image: ambatech.azurecr.io/psimicroservicesjenkins
+          ports:
+          - containerPort: 80
